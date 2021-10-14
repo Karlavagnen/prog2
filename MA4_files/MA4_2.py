@@ -41,5 +41,7 @@ if __name__ == '__main__':
 		tid_cpp.append(end-start)
 	plt.plot(n,tid_py,'bo')
 	plt.plot(n,tid_cpp,'ro')
+	plt.legend(['Py','Cpp'])
+	plt.title(['Plottning av Fibonnaci med Python och C++'])
 	plt.savefig('MA4_testplot.png')
 	main()
