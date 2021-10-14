@@ -26,19 +26,23 @@ def fib_py(n):
 
 if __name__ == '__main__':
 
-	n=np.arange(1,40)
+	n=np.arange(35,40)
 	tid_cpp=[]
 	tid_py=[]
-	for i in range(1,40):
+	for i in range(35,40):
 		start = pc()
 		fib_py(i)
 		end = pc()
-		tid_py.append(end-start)
+		tid_py.append(round(end-start,2))
+	for i in range(35,40):
 		f=Integer(i)
 		start_cpp=pc()
 		f.fib()
 		end_cpp=pc()
-		tid_cpp.append(end-start)
+		tid_cpp.append(round(end_cpp-start_cpp,2))
+	print(tid_cpp)
+	print()
+	print(tid_py)
 	plt.plot(n,tid_py,'bo')
 	plt.plot(n,tid_cpp,'ro')
 	plt.legend(['Py','Cpp'])
