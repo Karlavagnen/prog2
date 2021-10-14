@@ -26,10 +26,10 @@ def fib_py(n):
 
 if __name__ == '__main__':
 
-	n=np.arange(1,20)
+	n=np.arange(1,40)
 	tid_cpp=[]
 	tid_py=[]
-	for i in range(1,20):
+	for i in range(1,40):
 		start = pc()
 		fib_py(i)
 		end = pc()
@@ -42,6 +42,6 @@ if __name__ == '__main__':
 	plt.plot(n,tid_py,'bo')
 	plt.plot(n,tid_cpp,'ro')
 	plt.legend(['Py','Cpp'])
-	plt.title(['Plottning av Fibonnaci med Python och C++'])
+	plt.title('Plottning av Fibonnaci med Python och C++')
 	plt.savefig('MA4_testplot.png')
 	main()
