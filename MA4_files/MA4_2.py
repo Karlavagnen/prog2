@@ -14,10 +14,13 @@ def main():
 	print(f.get())
 	print(f.fib())
 	f.set(7)
-	print(f.get())
+	start=pc()
+#	print(f.get())
 	print(f.fib())
-	print(fib_py(5))
-
+#	print(fib_py(5))
+	end=pc()
+	print(f'Tiden det tog att räkna ut fibonnaci 47 var {round(end-start,2)} sekunder')
+#Det tog 51.72 sekunder att beräkna fibonnaci 47!
 def fib_py(n):
 	if n <= 1:
 		return n
@@ -26,25 +29,26 @@ def fib_py(n):
 
 if __name__ == '__main__':
 
-	n=np.arange(30,45)
-	tid_cpp=[]
-	tid_py=[]
-	for i in range(30,45):
-		start = pc()
-		fib_py(i)
-		end = pc()
-		tid_py.append(round(end-start,2))
-		f=Integer(i)
-		start_cpp=pc()
-		f.fib()
-		end_cpp=pc()
-		tid_cpp.append(round(end_cpp-start_cpp,2))
-	print(tid_cpp)
-	print()
-	print(tid_py)
-	plt.plot(n,tid_py,'bo')
-	plt.plot(n,tid_cpp,'ro')
-	plt.legend(['Py','Cpp'])
-	plt.title('Plottning av Fibonnaci med Python och C++')
-	plt.savefig('MA4_Py_Cpp_plot.png')
+#	n=np.arange(30,45)#Skapar en lista från 30 till 45
+#	tid_cpp=[] #Skapar en tom lista med tiden för cpp
+#	tid_py=[] #Skapar en tom lista med tiden för python
+#	for i in range(30,45):#En for loop som går från 30 till 45
+#		start = pc() #Startar tidtagning
+#		fib_py(i) #Python fibonnaci
+#		end = pc() #Stoppar tidtagning
+#		tid_py.append(round(end-start,2)) #Stoppar in tiden det tog i listan för python 
+#		f=Integer(i)
+#		start_cpp=pc()# Startar tidtagning för cpp
+#		f.fib() # Beräknar fib för cpp
+#		end_cpp=pc() #Stoppar tidtagning
+#		tid_cpp.append(round(end_cpp-start_cpp,2))#stoppar in tiden det tog i listan för cpp
+#	print(tid_cpp)
+#	print()
+#	print(tid_py)
+#	Plottning av tiden det tog!
+#	plt.plot(n,tid_py,'bo')
+#	plt.plot(n,tid_cpp,'ro')
+#	plt.legend(['Py','Cpp'])
+#	plt.title('Plottning av Fibonnaci med Python och C++')
+#	plt.savefig('MA4_Py_Cpp_plot.png')
 	main()
