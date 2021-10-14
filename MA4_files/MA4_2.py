@@ -26,15 +26,14 @@ def fib_py(n):
 
 if __name__ == '__main__':
 
-	n=np.arange(35,40)
+	n=np.arange(30,45)
 	tid_cpp=[]
 	tid_py=[]
-	for i in range(35,40):
+	for i in range(30,45):
 		start = pc()
 		fib_py(i)
 		end = pc()
 		tid_py.append(round(end-start,2))
-	for i in range(35,40):
 		f=Integer(i)
 		start_cpp=pc()
 		f.fib()
@@ -47,5 +46,5 @@ if __name__ == '__main__':
 	plt.plot(n,tid_cpp,'ro')
 	plt.legend(['Py','Cpp'])
 	plt.title('Plottning av Fibonnaci med Python och C++')
-	plt.savefig('MA4_testplot.png')
+	plt.savefig('MA4_Py_Cpp_plot.png')
 	main()
