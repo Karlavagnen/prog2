@@ -10,17 +10,20 @@ import matplotlib.pyplot as plt
 
 
 def main():
+
 	f = Integer(5)
 	print(f.get())
 	print(f.fib())
-	f.set(7)
+	f.set(47)
 	start=pc()
 #	print(f.get())
 	print(f.fib())
 #	print(fib_py(5))
 	end=pc()
-	print(f'Tiden det tog att räkna ut fibonnaci 47 var {round(end-start,2)} sekunder')
+	#print(f'Tiden det tog att räkna ut fibonnaci 47 var {round(end-start,2)} sekunder')
 #Det tog 51.72 sekunder att beräkna fibonnaci 47!
+#Viktigt att veta är att fibonacci 47 är större än det största tillåtna talet
+#Detta betyder att vi inte kommer att få fram rätt tal
 def fib_py(n):
 	if n <= 1:
 		return n
